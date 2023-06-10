@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ship
+  - Tower
+  - kuleA
+  - Arrow
+  - Panel
+  - Text1
+  - Text2
+  - Clamb
+  - Enemy
+  - Gold
+  - healthText
+  - Text3
+  - KrekenArm
+  - Drunk
+  - EnemyArrow
+  - Water
+  - PanelTwo
+  - krakenArm
+  - rockPoint
+  - Stone
+  - GameManager
+  - EnemyBullet
+  - FxTemporaire
+  - Sea
+  - Panelthree
+  - Kraken
+  - Panelfour
+  - PanelFive
+  - Level
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - gunner
+  - gun
+  - Enemy
+  - Ship
+  - Drunk
+  - loadGame
+  - poss
+  - Boat
+  - tut
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
