@@ -81,8 +81,9 @@ public class SecendLevelSpawnPointScripts : MonoBehaviour
 
             if (number < 4)
             {
+                float randomPos = Random.Range(-20,21);
                 target = GameObject.FindGameObjectWithTag("Ship").transform;
-                DeepPoint = new Vector2(Random.Range(transform.position.x - 5, transform.position.x + 6), -15f);
+                DeepPoint = new Vector2(randomPos, -15f);
                 Instantiate(clambEnemy, DeepPoint, Quaternion.identity);
                 number++;
             }
@@ -144,9 +145,9 @@ public class SecendLevelSpawnPointScripts : MonoBehaviour
 
             if (number < 4)
             {
+                float randomPos = Random.Range(-20,21);
                 target = GameObject.FindGameObjectWithTag("Ship").transform;
-                DeepPoint = new Vector2(Random.Range(transform.position.x - 5, transform.position.x + 6), -15f);
-                Instantiate(clambEnemy, DeepPoint, Quaternion.identity);
+                DeepPoint = new Vector2(randomPos, -15f);
                 number++;
             }
                 if (random2 == 0)
@@ -202,8 +203,9 @@ public class SecendLevelSpawnPointScripts : MonoBehaviour
 
             if (number < 5)
             {
+                float randomPos = Random.Range(-20, 21);
                 target = GameObject.FindGameObjectWithTag("Ship").transform;
-                DeepPoint = new Vector2(Random.Range(transform.position.x - 5, transform.position.x + 6), -15f);
+                DeepPoint = new Vector2(randomPos, -15f);
                 Instantiate(clambEnemy, DeepPoint, Quaternion.identity);
                 number++;
             }

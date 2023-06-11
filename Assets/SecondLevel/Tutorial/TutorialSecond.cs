@@ -14,9 +14,11 @@ public class TutorialSecond : MonoBehaviour
     BoatController boat;
     public GameObject cam;
     int fullarea = 0;
-
+    public Transform point1, point2, flypoin1, flyPoint2;
+    public GameObject normalEnemy, TankEnemy, flyEnemy,Panel;
     private void Start()
     {
+        Panel.SetActive(false);
         ImageInformationwhite.SetActive(false);
         ImageInformationred.SetActive(false);
         ImageInformationgreen.SetActive(false);
@@ -93,5 +95,32 @@ public class TutorialSecond : MonoBehaviour
     public void BoatDestroyed()
     {
         Destroy(boat.gameObject);
+    }
+
+    private void SpawnPoint()
+    {
+        Timer();
+    }
+
+    IEnumerator Timer()
+    {
+        Instantiate(TankEnemy, point1.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+        Instantiate(normalEnemy, point1.position, Quaternion.identity);
+        Instantiate(flyEnemy, flypoin1.position, Quaternion.identity);
+        yield return new WaitForSeconds(1);
+        Instantiate(normalEnemy, point1.position, Quaternion.identity);
+        Instantiate(flyEnemy, flypoin1.position, Quaternion.identity);
+        yield return new WaitForSeconds(6);
+        Instantiate(TankEnemy, point2.position, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+        Instantiate(normalEnemy, point2.position, Quaternion.identity);
+        Instantiate(flyEnemy, flyPoint2.position, Quaternion.identity);
+        yield return new WaitForSeconds(1);
+        Instantiate(normalEnemy, point2.position, Quaternion.identity);
+        Instantiate(flyEnemy, flyPoint2.position, Quaternion.identity);
+        yield return new WaitForSeconds(8);
+        Panel.SetActive(true);
+
     }
 }

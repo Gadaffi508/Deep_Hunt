@@ -6,10 +6,12 @@ public class BossEnemy : MonoBehaviour
 {
     private BossEventManager bossEventManager;
     private Animator animator;
+    private CameraThird camera;
     private void Start()
     {
         bossEventManager = FindObjectOfType<BossEventManager>();
-        animator = GetComponent<Animator>();        
+        animator = GetComponent<Animator>();     
+        camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraThird>();
     }
 
     private void Update()
@@ -27,6 +29,7 @@ public class BossEnemy : MonoBehaviour
             animator.SetBool("krakenScream", false);
             if (TimeElapsedEvent4())
             {
+
                 bossEventManager.KrakenEnemySpawnerEvent();
             }
         }
@@ -154,6 +157,7 @@ public class BossEnemy : MonoBehaviour
         if (elapsedTimeEvent2 >= targetTimeEvent2)
         {
             elapsedTimeEvent2 = 0f;
+            camera.BaslatTitreme();
             animator.SetBool("krakenScream", true);
             return true;
         }

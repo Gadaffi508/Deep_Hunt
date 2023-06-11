@@ -9,15 +9,26 @@ public class Krakenbar : MonoBehaviour
     public Image Healtbar;
     public GameObject HealtbarBG;
 
+    public GameObject panel;
     private void Start()
     {
+        panel.SetActive(false);
         enemy = GetComponent<EnemyHealtAndAttackScripts>();
     }
 
+    private void Update()
+    {
+        DamageFill();
+
+        if (enemy.health <= 0)
+        {
+            panel.SetActive(true);
+        }
+    }
     public void DamageFill()
     {
 
-        Healtbar.fillAmount = enemy.health / 1300;
+        Healtbar.fillAmount = enemy.health / 4000;
     }
 
 }

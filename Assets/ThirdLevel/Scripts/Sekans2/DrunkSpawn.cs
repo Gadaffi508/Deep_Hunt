@@ -5,44 +5,34 @@ using DG.Tweening;
 public class DrunkSpawn : MonoBehaviour
 {
     public Transform[] point;
+    public GameObject pointObject;
     public GameObject Enemy;
     private Transform target;
     private Animator animator;
+    private CameraThird camera;
     void Start()
     {
        
         target = GameObject.FindGameObjectWithTag("Ship").transform;
         animator = GetComponent<Animator>();
-
+        camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraThird>();
     }
 
     void BossSekans3Calistir()
     {
         animator.SetBool("krakenScream", true);
+        
         DrunkEnemySpawn();
     }
 
-    private void ChangePosition()
+   public void ChangePoint()
     {
-        if (target.transform.position.x > 0)
-        {
-            for (int i = 0; i < point.Length; i++)
-            {
-                point[i].transform.position = new Vector3(point[i].transform.position.x * -1, point[i].transform.position.y, point[i].transform.position.z);
-            }
-        }
-        else
-        {
-            for (int i = 0; i < point.Length; i++)
-            {
-                point[i].transform.position = new Vector3(point[i].transform.position.x * -1, point[i].transform.position.y, point[i].transform.position.z);
-            }
-        } 
+        pointObject.transform.position = new Vector2(target.position.x, 12);
     }
 
     public void DrunkEnemySpawn()
     {
-        ChangePosition();
+        ChangePoint();
         for (int i = 0; i < point.Length; i++)
         {
             GameObject enemy = Instantiate(Enemy, point[i].position,Quaternion.identity); 

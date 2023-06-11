@@ -46,7 +46,7 @@ public class CameraThird : MonoBehaviour
 
     }
 
-    void BaslatTitreme()
+    public void BaslatTitreme()
     {
         if (!titremeDevamEdiyor)
         {
