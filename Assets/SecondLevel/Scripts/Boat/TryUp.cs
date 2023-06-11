@@ -13,20 +13,23 @@ public class TryUp : BoatTowerController
     public bool upgrade = false;
     private AudioSource audio;
     public AudioClip[] takTak;
+    public int number1;
     
     private void Start()
     {
         audio = GetComponent<AudioSource>();
         tower = transform.GetComponentInParent<ArcherUpTower>();
-        TowerUpgrade = GameObject.FindGameObjectWithTag("PanelFive").gameObject;        
+        TowerUpgrade = GameObject.FindGameObjectWithTag("PanelFive").gameObject;
+        number1 = 0;
     }
-    public void Music(int number)
+    public void Music()
     {
-        audio.PlayOneShot(takTak[number]);
-        number++;
-        if (number == takTak.Length)
+
+        audio.PlayOneShot(takTak[number1]);
+        number1++;
+        if (number1 == takTak.Length)
         {
-            number = 0;
+            number1 = 0;
         }
     }
     public override void CloseTower()
