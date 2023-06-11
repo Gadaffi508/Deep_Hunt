@@ -27,7 +27,7 @@ public class CameraDelay : MonoBehaviour
 
     public IEnumerator StartScene()
     {
-        for (int i = level + 1; i <= targetAll.Length; i++)
+        for (int i = level + 1; i < targetAll.Length; i++)
         {
             targetAll[i].SetActive(false);
             targetAll[level].SetActive(true);

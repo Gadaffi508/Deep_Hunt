@@ -29,14 +29,14 @@ public class KrakenArms : MonoBehaviour
             arms.transform.DOMoveY(-6.5f, 1f).OnComplete(() =>
             {
 
-                arms.transform.DOMoveY(-6.5f, 2f).OnComplete(() =>
+                arms.transform.DOMoveY(-6.5f, 1f).OnComplete(() =>
                 {
                     animator.SetBool("Exit", true);
                     arms.transform.DOMoveY(-6.5f, 2f).OnComplete(() =>
                     {
                         animator.SetBool("Exit", false);
                         animator.SetBool("input", true);
-                        arms.transform.DOMoveY(-20, 1f).OnComplete(() =>
+                        arms.transform.DOMoveY(-20f, 1f).OnComplete(() =>
                         {
                             animator.SetBool("input", false);
                             Destroy(arms);
@@ -44,7 +44,7 @@ public class KrakenArms : MonoBehaviour
                     });
                 });
             });
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(10f);
         }
 
     }

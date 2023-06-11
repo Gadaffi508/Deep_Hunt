@@ -8,11 +8,16 @@ public class ArcherUpTower : MonoBehaviour
     [SerializeField] GameObject upgradeTower;
     [Space]
     BoatController boat;
+
+   
+
     private void Start()
     {
+  
         boat = GameObject.FindGameObjectWithTag("Ship").gameObject.GetComponent<BoatController>();
     }
 
+   
     private void Update()
     {
         if (boat.isFacingRight)

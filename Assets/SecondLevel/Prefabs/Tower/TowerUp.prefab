@@ -226,6 +226,15 @@ MonoBehaviour:
   gunInfoPanel: {fileID: 0}
   TowerUpgrade: {fileID: 0}
   upgrade: 0
+  takTak:
+  - {fileID: 8300000, guid: 66c1ed49bf2038d42879b65d73da71da, type: 3}
+  - {fileID: 8300000, guid: f06fecb1dea0f41449383e269ce2051b, type: 3}
+  - {fileID: 8300000, guid: 6386cea55ea59b647a638e45bc9eb4a6, type: 3}
+  - {fileID: 8300000, guid: ae8a09c623695dc4582db8125eeb8b5d, type: 3}
+  - {fileID: 8300000, guid: c24b70d03e5cf7f44b2cc9d821aa179b, type: 3}
+  - {fileID: 8300000, guid: c85aa76d3483493458ac453bb456e856, type: 3}
+  - {fileID: 8300000, guid: 839433e48c1439347bf0147d61dfabfd, type: 3}
+  - {fileID: 8300000, guid: e960bab7fac1f4d449d4185b190617a5, type: 3}
 --- !u!95 &8267323366379638213
 Animator:
   serializedVersion: 4

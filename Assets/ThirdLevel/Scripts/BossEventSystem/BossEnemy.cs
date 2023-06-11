@@ -98,10 +98,11 @@ public class BossEnemy : MonoBehaviour
         else if (elapsedTimeKrakenDown >= targetTimeKrakenDown)
         {
 
+            audio.Play();
             if (elapsedTimeKrakenDown >= targetTimeKrakenDown * 2)
             {
                 elapsedTimeKrakenDown = 0;
-                audio.Play();
+                
                 return KrakenDown();
             }
             return false;

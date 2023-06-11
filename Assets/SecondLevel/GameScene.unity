@@ -172,6 +172,7 @@ MonoBehaviour:
   clickd: 1
   levelM: 1
   ManM: 1
+  enemyL: []
 --- !u!4 &175835439
 Transform:
   m_ObjectHideFlags: 0
