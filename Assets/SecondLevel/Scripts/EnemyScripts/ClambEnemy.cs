@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class ClambEnemy : MonoBehaviour
@@ -13,14 +14,22 @@ public class ClambEnemy : MonoBehaviour
 
     private Animator animator;
     private Rigidbody2D rb;
+
+    private AudioSource audioSource;
+    public AudioClip ses;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = rb.GetComponent<Animator>();
         rb.bodyType = RigidbodyType2D.Dynamic;
+        audioSource = GetComponent<AudioSource>();
+        StartCoroutine(Timer());
     }
 
-
+    private void Update()
+    {
+        
+    }
     void FixedUpdate()
     {
         rb.velocity = Vector2.zero;
@@ -62,5 +71,12 @@ public class ClambEnemy : MonoBehaviour
         damage += 2;
         GameManager.Instance.TakeDamage(damage);
         StartCoroutine(DamageShip());
+    }
+
+    IEnumerator Timer()
+    {
+        audioSource.PlayOneShot(ses);
+        yield return new WaitForSeconds(0.3f);
+        StartCoroutine(Timer());
     }
 }
