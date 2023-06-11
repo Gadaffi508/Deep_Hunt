@@ -7,11 +7,15 @@ public class BossEnemy : MonoBehaviour
     private BossEventManager bossEventManager;
     private Animator animator;
     private CameraThird camera;
+    private AudioSource audio;
+    public AudioClip scream, mrmrm;
+    public GameObject simsek;
     private void Start()
     {
         bossEventManager = FindObjectOfType<BossEventManager>();
         animator = GetComponent<Animator>();     
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraThird>();
+        audio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -86,6 +90,8 @@ public class BossEnemy : MonoBehaviour
 
         if (elapsedTimeKrakenDown <= targetTimeKrakenDown)
         {
+
+            audio.Pause();
             return true;
 
         }
@@ -95,6 +101,7 @@ public class BossEnemy : MonoBehaviour
             if (elapsedTimeKrakenDown >= targetTimeKrakenDown * 2)
             {
                 elapsedTimeKrakenDown = 0;
+                audio.Play();
                 return KrakenDown();
             }
             return false;
@@ -157,6 +164,8 @@ public class BossEnemy : MonoBehaviour
         if (elapsedTimeEvent2 >= targetTimeEvent2)
         {
             elapsedTimeEvent2 = 0f;
+            audio.PlayOneShot(scream);
+            Instantiate(simsek,transform.position,Quaternion.identity);
             camera.BaslatTitreme();
             animator.SetBool("krakenScream", true);
             return true;
