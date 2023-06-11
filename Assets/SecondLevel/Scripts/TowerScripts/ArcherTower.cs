@@ -24,7 +24,9 @@ public class ArcherTower : MonoBehaviour
     public AudioClip bomb;
     public int damage;
 
+
     public float FireTÝme = 1.5f;
+
     private void Start()
     {
         enemyLayer = LayerMask.NameToLayer("Enemy");

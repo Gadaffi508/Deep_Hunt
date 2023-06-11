@@ -31,6 +31,11 @@ public class TutorialSecond : MonoBehaviour
         ImageInformationgreen.SetActive(false);
     }
 
+    private void OnDestroy()
+    {
+        Destroy(boat.gameObject);
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -89,7 +94,7 @@ public class TutorialSecond : MonoBehaviour
                 BuilTower = false;
             }
         }
-        if (fullarea == 3)
+        if (fullarea > 2)
         {
             boat = GameObject.FindGameObjectWithTag("Ship").GetComponent<BoatController>();
             boat.GetComponent<BoatController>().enabled = true;
@@ -108,11 +113,6 @@ public class TutorialSecond : MonoBehaviour
         {
             Destroy(destg[i]);
         }
-    }
-
-    public void BoatDestroyed()
-    {
-        Destroy(boat.gameObject);
     }
 
     public void SpawnPoint()

@@ -22,27 +22,41 @@ public class CameraDelay : MonoBehaviour
     private void Start()
     {
         StartCoroutine(StartScene());
-        level = LevelManager.instanceLevel.levelM;
+        //level = LevelManager.instanceLevel.levelM;
     }
 
     public IEnumerator StartScene()
     {
+        targetPos = targetAll[level].transform;
+        yield return new WaitForSeconds(1);
+        level = LevelManager.instanceLevel.levelM;
+        if (level == 1)
+        {
+            targetAll[2].SetActive(false);
+            targetAll[3].SetActive(false);
+            targetPos = targetAll[1].transform;
+            level = 1;
+
+        }
+        if(level == 2)
+        {
+            targetAll[2].SetActive(true);
+            targetAll[3].SetActive(false);
+            targetPos = targetAll[2].transform;
+            level = 2;
+        }
+        if (level == 3)
+        {
+            targetAll[3].SetActive(true);
+            targetPos = targetAll[3].transform;
+            level=3;
+        }
+
         for (int i = level + 1; i < targetAll.Length; i++)
         {
             targetAll[i].SetActive(false);
-            targetAll[level].SetActive(true);
         }
 
-        if (level > 1)
-            targetPos = targetAll[level - 1].transform;
-        else
-            targetPos = targetAll[1].transform;
-
-        yield return new WaitForSeconds(1);
-
-        delayAmount = transform.position - targetPos.position;
-
-        targetPos = targetAll[level].transform;
     }
 
     void LateUpdate()

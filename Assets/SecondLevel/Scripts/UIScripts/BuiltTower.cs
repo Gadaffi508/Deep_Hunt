@@ -10,6 +10,7 @@ public class BuiltTower : MonoBehaviour
     public GameObject towerP;
     public Sprite TowerRenderer;
     public Image TowerSprite;
+    public Text ýnformatýon;
 
     //Events
     public event Action<GameObject> OnButtonClick;
@@ -20,6 +21,11 @@ public class BuiltTower : MonoBehaviour
 
     private void Start()
     {
+        if (GameManager.Instance.ýnformatoýnTower != null)
+        {
+            ýnformatýon.text = GameManager.Instance.ýnformatoýnTower;
+        }
+
         towerGold = GetComponent<TowerS>();
 
         button = GetComponent<Button>();

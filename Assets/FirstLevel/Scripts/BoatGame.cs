@@ -13,7 +13,8 @@ public class BoatGame : MonoBehaviour
     private void Start()
     {
         UpdateBoat(boatdbs);
-        Instantiate(artworkObject, artworkObject.transform.position, Quaternion.identity);
+        GameObject boat = Instantiate(artworkObject, artworkObject.transform.position, Quaternion.identity);
+        Camera.main.GetComponent<CameraTutorial>().Target = boat.transform;
     }
 
     private void UpdateBoat(BoatDataBase boatChoose)

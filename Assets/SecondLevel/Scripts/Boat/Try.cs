@@ -14,6 +14,8 @@ public class Try : BoatTowerController
     public bool upgrade = false;
     public bool bulletupgrade = false;
 
+    public string Informatýon;
+
     private void Start()
     {
         tower = transform.GetComponentInParent<ArcherTower>();
@@ -33,6 +35,8 @@ public class Try : BoatTowerController
 
     public override void TowerBuilt()
     {
+        GameManager.Instance.ýnformatoýnTower = Informatýon;
+
         GameManager.Instance.built = false;
         if (gunInfoPanel != null && bulletupgrade == true && GameManager.Instance.clickd == true)
         {

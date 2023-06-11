@@ -13,6 +13,8 @@ public class BoatManager : MonoBehaviour
     public SpriteRenderer spt;
     int der;
 
+    AsyncOperation load;
+    AsyncOperation unLoad;
     private void Awake()
     {
         spt = GetComponent<SpriteRenderer>();
@@ -23,8 +25,32 @@ public class BoatManager : MonoBehaviour
     public void ChangeScene(int sceneID)
     {
         Save("direction", direction);
-        SceneManager.LoadScene(sceneID);
+
+        StartCoroutine(Loading());
     }
+    public IEnumerator Loading()
+    {
+        SceneManager.LoadScene(3, LoadSceneMode.Additive);
+        load = SceneManager.LoadSceneAsync(sceneID, LoadSceneMode.Additive);
+        unLoad = SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+        Debug.Log(unLoad);
+        while (load != null && unLoad != null)
+        {
+            if (load.isDone)
+                load = null;
+
+            if (unLoad.isDone)
+                unLoad = null; 
+
+            yield return new WaitForEndOfFrame();
+        }
+        yield return new WaitForEndOfFrame();
+
+        Debug.Log("Loaded");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(sceneID));
+        MapManager.instance.SetCanvasCamera();
+    }
+
     public void Save(string KeyName, int _direction)
     {
         PlayerPrefs.SetInt(KeyName, _direction);

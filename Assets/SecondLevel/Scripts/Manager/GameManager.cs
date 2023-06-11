@@ -38,6 +38,9 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> enemyL = new List<GameObject>();
 
+    public string ýnformatoýnTower;
+    public GameDead deadScene;
+
     private void Awake()
     {
         audio = GetComponent<AudioSource>();
@@ -90,6 +93,11 @@ public class GameManager : MonoBehaviour
         audio.PlayOneShot(DamageSounds[random]);
         Health -= Mathf.Abs((damage - damagedecrease)); // health = health - damage - (damagedecrease)
         Healtbar.fillAmount = Health / 200;
+
+        if (Health <= 0)
+        {
+            deadScene.Show();
+        }
     }
 
     public void nextScene(int sceneÝD)

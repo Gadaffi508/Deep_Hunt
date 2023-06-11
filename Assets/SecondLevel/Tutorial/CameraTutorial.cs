@@ -6,7 +6,17 @@ using UnityEngine;
 public class CameraTutorial : MonoBehaviour
 {
     public GameObject Fog;
+
     Transform targetPos;
+    public Transform Target { get { return targetPos; } set 
+        { 
+            targetPos = value;
+
+            if(targetPos != null)
+                delayAmount = transform.position - targetPos.position;
+        } 
+    }
+
     public float speed = 2.0f;
     public Vector3 delayAmount;
     private Vector3 targetVector;
@@ -45,7 +55,7 @@ public class CameraTutorial : MonoBehaviour
         yield return new WaitForSeconds(1);
         targetPos = GameObject.FindGameObjectWithTag("Ship").transform;
         // Karakter ile kamera arasýndaki baþlangýç mesafesini belirlemek için kullanýlýr.
-        delayAmount = transform.position - targetPos.position;
+        
     }
 
     void LateUpdate()
