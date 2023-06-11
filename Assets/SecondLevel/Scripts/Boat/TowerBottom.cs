@@ -4,17 +4,18 @@ using UnityEngine;
 public class TowerBottom : BoatTowerController
 {
     public GameObject TowerPanel;
+    public int areaI;
 
     private void Start()
     {
-        TowerPanel = GameObject.FindGameObjectWithTag("Panelfour").gameObject;
+        TowerPanel = GameObject.FindGameObjectWithTag("Panelfour").gameObject; //
     }
 
     public override void CloseTower()
     {
         if (TowerPanel != null)
         {
-            TowerPanel.transform.DOMoveY(1500, 1);
+            TowerPanel.GetComponent<UIController>().Hide();
             TowerPanel.GetComponent<TowerButtomController>().SetTower(null);
             GameManager.Instance.clickb = true;
             GameManager.Instance.clicka = true;
@@ -26,7 +27,7 @@ public class TowerBottom : BoatTowerController
     {
         if (TowerPanel != null && GameManager.Instance.clickc == true)
         {
-            TowerPanel.transform.DOMoveY(950, 1);
+            TowerPanel.GetComponent<UIController>().Show();
             TowerPanel.GetComponent<TowerButtomController>().SetTower(this);
             GameManager.Instance.clickb = false;
             GameManager.Instance.clicka = false;
@@ -38,6 +39,6 @@ public class TowerBottom : BoatTowerController
     {
         CloseTower();
         Destroy(gameObject);
-        return Instantiate(_Tower, transform.position, Quaternion.identity);
+        return Instantiate(_Tower, transform.position, Quaternion.identity, transform.parent);
     }
 }

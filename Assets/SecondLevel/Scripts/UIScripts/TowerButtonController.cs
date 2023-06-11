@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TowerButtonController : MonoBehaviour
+public class TowerButtonController : UIController
 {
     [SerializeField] BuiltTower[] allButtons;
 

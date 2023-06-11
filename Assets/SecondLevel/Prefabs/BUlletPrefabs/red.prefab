@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7295278325232290574}
   m_Layer: 9
   m_Name: red
-  m_TagString: Untagged
+  m_TagString: Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,3 +118,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   TowerPanel: {fileID: 0}
+  areaI: 2

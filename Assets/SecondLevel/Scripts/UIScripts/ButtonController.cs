@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ButtonController : MonoBehaviour
+public class ButtonController : UIController
 {
     public Text ButtonName;
     public Text GunSpeed;

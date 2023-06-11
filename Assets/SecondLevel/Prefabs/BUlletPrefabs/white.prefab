@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7024776210089142285}
   m_Layer: 6
   m_Name: white
-  m_TagString: Untagged
+  m_TagString: Area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   TowerPanel: {fileID: 0}
+  areaI: 3
 --- !u!58 &7024776210089142285
 CircleCollider2D:
   m_ObjectHideFlags: 0

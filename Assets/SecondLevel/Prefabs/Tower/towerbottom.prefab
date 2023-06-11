@@ -76,7 +76,7 @@ AudioSource:
   m_GameObject: {fileID: 21210942353340201}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 14b512f0c43be884292f7c0256e8ecb6, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -369,6 +369,7 @@ MonoBehaviour:
   gunInfoPanel: {fileID: 0}
   TowerUpgrade: {fileID: 0}
   upgrade: 0
+  bulletupgrade: 0
 --- !u!61 &6598605619439820119
 BoxCollider2D:
   m_ObjectHideFlags: 0

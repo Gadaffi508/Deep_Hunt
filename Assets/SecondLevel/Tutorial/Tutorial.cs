@@ -9,7 +9,9 @@ public class Tutorial : MonoBehaviour
     public GameObject Text1;
     public GameObject Text2;
     public GameObject button;
-    public GameObject[] warning;
+    public GameObject warningred;
+    public GameObject warninggreen;
+    public GameObject warningwhite;
 
     BoatController boat;
     private void Start()
@@ -25,10 +27,9 @@ public class Tutorial : MonoBehaviour
         captanImagesecond.SetActive(true);
         Text2.SetActive(true);
         button.SetActive(true);
-        for (int i = 0; i < warning.Length; i++)
-        {
-            warning[i].SetActive(true);
-        }
+        warninggreen.SetActive(true);
+        warningred.SetActive(true);
+        warningwhite.SetActive(true);
         StartCoroutine(boatmanagerFalse());
     }
     IEnumerator boatmanagerFalse()

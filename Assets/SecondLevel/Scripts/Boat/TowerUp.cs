@@ -4,6 +4,7 @@ using UnityEngine;
 public class TowerUp : BoatTowerController
 {
     public GameObject TowerPanel;
+    public int areaI;
 
     private void Start()
     {
@@ -14,7 +15,7 @@ public class TowerUp : BoatTowerController
     {
         if (TowerPanel != null)
         {
-            TowerPanel.transform.DOMoveY(1500, 1);
+            TowerPanel.GetComponent<UIController>().Hide();
             TowerPanel.GetComponent<TowerTopController>().SetTower(null);
             GameManager.Instance.clickb = true;
             GameManager.Instance.clickc = true;
@@ -26,7 +27,7 @@ public class TowerUp : BoatTowerController
     {
         if (TowerPanel != null && GameManager.Instance.clicka == true)
         {
-            TowerPanel.transform.DOMoveY(950, 1);
+            TowerPanel.GetComponent<UIController>().Show();
             TowerPanel.GetComponent<TowerTopController>().SetTower(this);
             GameManager.Instance.clickb = false;
             GameManager.Instance.clickc = false;
@@ -39,6 +40,6 @@ public class TowerUp : BoatTowerController
         Vector2 _ofset = new Vector2(transform.position.x,_Tower.transform.position.y);
         CloseTower();
         Destroy(gameObject);
-        return Instantiate(_Tower, _ofset, Quaternion.identity);
+        return Instantiate(_Tower, _ofset, Quaternion.identity, transform.parent);
     }
 }

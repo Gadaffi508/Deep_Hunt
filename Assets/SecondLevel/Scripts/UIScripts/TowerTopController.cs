@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerTopController : MonoBehaviour
+public class TowerTopController : UIController
 {
     [SerializeField] BuiltTower[] allButtons;
 

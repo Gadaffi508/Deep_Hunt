@@ -15,19 +15,19 @@ public class TryUp : BoatTowerController
     private void Start()
     {
         tower = transform.GetComponentInParent<ArcherUpTower>();
-        TowerUpgrade = GameObject.FindGameObjectWithTag("PanelFive").gameObject;
+        TowerUpgrade = GameObject.FindGameObjectWithTag("PanelFive").gameObject;        
     }
 
     public override void CloseTower()
     {
-        TowerUpgrade.transform.DOMoveY(1500, 1);
+        TowerUpgrade.GetComponent<UIController>().Hide();
     }
 
     public override void TowerBuilt()
     {
         if (TowerUpgrade != null && upgrade == true)
         {
-            TowerUpgrade.transform.DOMoveY(500, 1);
+            TowerUpgrade.GetComponent<UIController>().Show();
         }
     }
     public void HealthUpgrade()

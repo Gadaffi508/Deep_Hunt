@@ -33,6 +33,7 @@ TagManager:
   - Panelfour
   - PanelFive
   - Level
+  - Area
   layers:
   - Default
   - TransparentFX

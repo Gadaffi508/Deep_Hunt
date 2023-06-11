@@ -1,10 +1,11 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TowerUpgradeController : MonoBehaviour
+public class TowerUpgradeController : UIController
 {
     [SerializeField] TowerUpgrade towerUpgrade;
 

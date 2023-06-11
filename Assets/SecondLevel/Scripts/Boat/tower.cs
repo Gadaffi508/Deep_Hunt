@@ -6,6 +6,7 @@ using DG.Tweening;
 public class tower : BoatTowerController
 {
     public GameObject TowerPanel;
+    public int areaI;
 
     private void Start()
     {
@@ -16,7 +17,7 @@ public class tower : BoatTowerController
     {
         if (TowerPanel != null)
         {
-            TowerPanel.transform.DOMoveY(1500, 1);
+            TowerPanel.GetComponent<UIController>().Hide();
             TowerPanel.GetComponent<TowerButtonController>().SetTower(null);
             GameManager.Instance.built = true;
             GameManager.Instance.clickc = true;
@@ -29,7 +30,7 @@ public class tower : BoatTowerController
     {
         if (TowerPanel != null && GameManager.Instance.clickb == true)
         {
-            TowerPanel.transform.DOMoveY(950,1);
+            TowerPanel.GetComponent<UIController>().Show();
             TowerPanel.GetComponent<TowerButtonController>().SetTower(this);
             GameManager.Instance.clickc = false;
             GameManager.Instance.clicka = false;
@@ -41,6 +42,6 @@ public class tower : BoatTowerController
     {
         CloseTower();
         Destroy(gameObject); 
-        return Instantiate(_Tower, transform.position, transform.rotation);
+        return Instantiate(_Tower, transform.position, transform.rotation, transform.parent);
     }
 }

@@ -497,6 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb94e2249ab3e2b4bb8174c1fdaa9c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inActiveY: 0
   towerUpgrade: {fileID: 1393521283550555576}
 --- !u!1 &1393521282094904426
 GameObject:
@@ -844,6 +845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a05876dae7311f4b9c0100cc7f63037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inActiveY: 0
   ButtonName: {fileID: 0}
   GunSpeed: {fileID: 6892855174766443991}
   GunDamage: {fileID: 6892855172928189128}
@@ -1800,9 +1802,9 @@ RectTransform:
   m_Father: {fileID: 1393521281934490692}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 95, y: 305}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -235}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1393521282788279562
@@ -1956,6 +1958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10af1f614163a2542a4d877834722be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inActiveY: 0
   allButtons:
   - {fileID: 1393521283801441187}
   - {fileID: 1393521282483609978}
@@ -2456,9 +2459,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c8c19366c7a2d4eb7128d241919d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inActiveY: 0
   allButtons:
   - {fileID: 1393521282360889140}
   - {fileID: 1393521283280653075}
+  clicked: 0
+  ImageInfor: {fileID: 0}
+  tutImage: 0
 --- !u!1 &1393521283350807678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,7 +2577,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 210, y: -235}
+  m_AnchoredPosition: {x: 250, y: -235}
   m_SizeDelta: {x: 120, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1393521283481087399
@@ -2877,6 +2884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8076cbc8ef850d1468caa864c28db716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inActiveY: 0
   allButtons:
   - {fileID: 1393521283146951461}
   - {fileID: 1393521282183573816}
@@ -3513,6 +3521,7 @@ GameObject:
   - component: {fileID: 6892855173744210074}
   - component: {fileID: 6892855173744210072}
   - component: {fileID: 6892855173744210075}
+  - component: {fileID: 7206282215174591329}
   m_Layer: 5
   m_Name: bg
   m_TagString: Panel
@@ -3580,6 +3589,19 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &7206282215174591329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6892855173744210077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07cf25d5d632fad4bb36e898e344c85c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inActiveY: 0
 --- !u!1 &6892855174766443993
 GameObject:
   m_ObjectHideFlags: 0

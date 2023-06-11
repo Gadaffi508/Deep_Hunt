@@ -170,6 +170,8 @@ MonoBehaviour:
   clickb: 1
   clickc: 1
   clickd: 1
+  levelM: 1
+  ManM: 1
 --- !u!4 &175835439
 Transform:
   m_ObjectHideFlags: 0
@@ -194,7 +196,7 @@ AudioSource:
   m_GameObject: {fileID: 175835437}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 14b512f0c43be884292f7c0256e8ecb6, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
