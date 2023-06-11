@@ -227,7 +227,7 @@ MonoBehaviour:
   Bullet: {fileID: 1651184287069470924, guid: 1f4337f61e3ac394a9c90853fd59f424, type: 3}
   nextPrefab: 0
   bombEffect: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
-  bomb: {fileID: 8300000, guid: 14d34704822f1b34ba4d71741576cbec, type: 3}
+  bomb: {fileID: 8300000, guid: dbef31b514ebca347a73a149d56e5796, type: 3}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
