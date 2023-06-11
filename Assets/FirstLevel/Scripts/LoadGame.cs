@@ -16,9 +16,12 @@ public class LoadGame : MonoBehaviour
     void Start()
     {
         collider = GetComponent<Collider2D>();
-        if (CameraDelay.instance.level != levelL)
+        if (LevelManager.instanceLevel != null)
         {
-            collider.enabled = false;
+            if (LevelManager.instanceLevel.levelM != levelL)
+            {
+                collider.enabled = false;
+            }
         }
         Camera = GameObject.FindGameObjectWithTag("MainCamera").gameObject.GetComponent<Camera>();
     }
@@ -45,7 +48,7 @@ public class LoadGame : MonoBehaviour
             if (Camera.orthographicSize <= 3)
             {
                 Camera.orthographicSize = 3;
-                StartCoroutine(loadGame());
+                StartCoroutine(loadGameS());
             }
         }
     }
@@ -53,9 +56,9 @@ public class LoadGame : MonoBehaviour
     {
         zoom = true;
     }
-    IEnumerator loadGame()
+    IEnumerator loadGameS()
     {
-        Camera.GetComponent<CameraDelay>().FogOut();
+        CameraDelay.instance.FogOut();
         yield return new WaitForSeconds(1);
         LevelManager.instanceLevel.LoadBoat();
         SceneManager.LoadScene(sceneID);

@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     public bool levelM = true;
     public bool ManM = true;
 
+    public List<GameObject> enemyL = new List<GameObject>();
+
     private void Awake()
     {
         audio = GetComponent<AudioSource>();
@@ -125,6 +127,28 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.4f);
         Cam.SetActive(false);
+    }
+
+    public void AddEnemyToList(GameObject enemy)
+    {
+        if (enemy.CompareTag("Enemy"))
+        {
+            enemyL.Add(enemy);
+        }
+    }
+
+    public void RemoveEnemyFromList(GameObject enemy)
+    {
+        if (enemyL.Contains(enemy))
+        {
+            enemyL.Remove(enemy);
+        }
+    }
+
+    public void EnemyDestroyed(GameObject enemy)
+    {
+        RemoveEnemyFromList(enemy);
+        Destroy(enemy);
     }
 
 

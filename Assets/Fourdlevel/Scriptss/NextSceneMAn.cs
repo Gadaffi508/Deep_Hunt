@@ -9,4 +9,9 @@ public class NextSceneMAn : MonoBehaviour
     {
         SceneManager.LoadScene(scene›D);
     }
+
+    public void BoatLoad()
+    {
+        GameManager.Instance.GameobjectBoatActive();
+    }
 }

@@ -22,14 +22,17 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
     public bool hasarVeriliyor = false;
     private AudioSource audio;
     public AudioClip deadSound;
+    GameManager manager;
 
     void Start()
     {
+        manager = FindObjectOfType<GameManager>();
         move = GetComponent<EnemyMove>();
         render = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         render.enabled = true;
         audio = GetComponent<AudioSource>();
+        manager.AddEnemyToList(gameObject);
     }
     public void TakeDamage()
     {
@@ -45,6 +48,7 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
         render.enabled = false;
         //audio.PlayOneShot(deadSound);
         Instantiate(puffEffect, effectPoint1.position, Quaternion.identity);
+        manager.EnemyDestroyed(gameObject);
         Destroy(gameObject);
     }
 

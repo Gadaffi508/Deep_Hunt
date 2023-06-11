@@ -1,7 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using DG.Tweening;
 
 public class TutorialSecond : MonoBehaviour
 {
@@ -16,8 +15,16 @@ public class TutorialSecond : MonoBehaviour
     int fullarea = 0;
     public Transform point1, point2, flypoin1, flyPoint2;
     public GameObject normalEnemy, TankEnemy, flyEnemy,Panel;
+    public GameObject SpawnEnemy;
+
+    public static TutorialSecond tutorialInst;
+    public bool BuilTower = false;
+    bool finished = false;
+
     private void Start()
     {
+        tutorialInst = this;
+
         Panel.SetActive(false);
         ImageInformationwhite.SetActive(false);
         ImageInformationred.SetActive(false);
@@ -76,11 +83,22 @@ public class TutorialSecond : MonoBehaviour
                     }
                 }
             }
+            if (BuilTower == true && fullarea >= 2)
+            {
+                SpawnPoint();
+                BuilTower = false;
+            }
         }
         if (fullarea == 3)
         {
             boat = GameObject.FindGameObjectWithTag("Ship").GetComponent<BoatController>();
             boat.GetComponent<BoatController>().enabled = true;
+        }
+        if (finished == true && GameManager.Instance.enemyL.Count <= 0)
+        {
+            Panel.SetActive(true);
+            boat.GetComponent<BoatController>().enabled = false;
+            Panel.transform.DOScale(1,1);
         }
     }
 
@@ -97,9 +115,9 @@ public class TutorialSecond : MonoBehaviour
         Destroy(boat.gameObject);
     }
 
-    private void SpawnPoint()
+    public void SpawnPoint()
     {
-        Timer();
+        StartCoroutine(Timer());
     }
 
     IEnumerator Timer()
@@ -110,17 +128,14 @@ public class TutorialSecond : MonoBehaviour
         Instantiate(flyEnemy, flypoin1.position, Quaternion.identity);
         yield return new WaitForSeconds(1);
         Instantiate(normalEnemy, point1.position, Quaternion.identity);
-        Instantiate(flyEnemy, flypoin1.position, Quaternion.identity);
         yield return new WaitForSeconds(6);
         Instantiate(TankEnemy, point2.position, Quaternion.identity);
         yield return new WaitForSeconds(2);
         Instantiate(normalEnemy, point2.position, Quaternion.identity);
-        Instantiate(flyEnemy, flyPoint2.position, Quaternion.identity);
         yield return new WaitForSeconds(1);
         Instantiate(normalEnemy, point2.position, Quaternion.identity);
         Instantiate(flyEnemy, flyPoint2.position, Quaternion.identity);
-        yield return new WaitForSeconds(8);
-        Panel.SetActive(true);
+        finished = true;
 
     }
 }

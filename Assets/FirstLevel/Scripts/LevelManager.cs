@@ -9,8 +9,6 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        CameraDelay.instance.level = levelM;
-
         if (instanceLevel != null)
         {
             Destroy(this.gameObject);
@@ -22,13 +20,6 @@ public class LevelManager : MonoBehaviour
     public void NextLevel()
     {
         levelM++;
-    }
-    private void FixedUpdate()
-    {
-        if (CameraDelay.instance != null)
-        {
-            CameraDelay.instance.level = levelM;
-        }
     }
     public void LoadMapScene()
     {
