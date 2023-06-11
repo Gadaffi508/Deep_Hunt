@@ -8,7 +8,7 @@ public class BossEnemy : MonoBehaviour
     private Animator animator;
     private CameraThird camera;
     private AudioSource audio;
-    public AudioClip scream, mrmrm;
+    public AudioClip scream, mrmrm,ah;
     public GameObject simsek;
     private void Start()
     {
@@ -220,7 +220,11 @@ public class BossEnemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Arrow"))
         {
+
+            audio.PlayOneShot(ah);
             Destroy(collision.gameObject);
         }
     }
+
+
 }

@@ -1784,6 +1784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scream: {fileID: 8300000, guid: 921e8ad759ffb944c9d53aa7f7db3d6e, type: 3}
   mrmrm: {fileID: 8300000, guid: 4d98f0bcba827934eaafffd9700c4093, type: 3}
+  ah: {fileID: 8300000, guid: b49323892dadcec46b5b71cda2abc6b5, type: 3}
   simsek: {fileID: 100000, guid: f89732ea99785b94c87bbba1e27f75a3, type: 3}
   elapsedTimeKrakenDown: 0
   targetTimeKrakenDown: 40
@@ -1889,7 +1890,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 14b512f0c43be884292f7c0256e8ecb6, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4d98f0bcba827934eaafffd9700c4093, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
