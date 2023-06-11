@@ -39,6 +39,7 @@ public class BossEnemy : MonoBehaviour
         }
         else
         {
+            
             bossEventManager.KrakenUpEvent();
             if (TimeElapsedEvent2())
             {
@@ -56,31 +57,6 @@ public class BossEnemy : MonoBehaviour
        
     }
   
-        //if (HealthAboveThreshold()) {
-
-        //    if (TimeElapsedEvent1())
-        //    {
-        //        bossEventManager.TriggerBossEvent1();
-        //        animator.SetBool("krakenScream", false);
-        //    }
-        //}
-        //else if (HealthBelowThreshold())
-        //{
-        //    if (TimeElapsedEvent2())
-        //    {
-        //        bossEventManager.TriggerBossEvent3();
-        //        animator.SetBool("krakenScream", true);
-        //    }
-        //    else if (TimeElapsedEvent1())
-        //    {
-        //        bossEventManager.TriggerBossEvent1();
-        //        animator.SetBool("krakenScream", false);
-        //    }
-        //    else
-        //    {
-        //        animator.SetBool("krakenScream", false);
-        //    }           
-        //}
 
     public float elapsedTimeKrakenDown = 0f;
     public float targetTimeKrakenDown = 0f;
@@ -91,14 +67,14 @@ public class BossEnemy : MonoBehaviour
         if (elapsedTimeKrakenDown <= targetTimeKrakenDown)
         {
 
-            audio.Pause();
+          
             return true;
 
         }
         else if (elapsedTimeKrakenDown >= targetTimeKrakenDown)
         {
 
-            audio.Play();
+           
             if (elapsedTimeKrakenDown >= targetTimeKrakenDown * 2)
             {
                 elapsedTimeKrakenDown = 0;
