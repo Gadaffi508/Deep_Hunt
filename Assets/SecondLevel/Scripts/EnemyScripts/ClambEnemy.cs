@@ -70,12 +70,13 @@ public class ClambEnemy : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         damage += 2;
         GameManager.Instance.TakeDamage(damage);
+
+        audioSource.PlayOneShot(ses);
         StartCoroutine(DamageShip());
     }
 
     IEnumerator Timer()
     {
-        audioSource.PlayOneShot(ses);
         yield return new WaitForSeconds(0.3f);
         StartCoroutine(Timer());
     }

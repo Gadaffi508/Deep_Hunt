@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ThirdLevel/ThirdLevel.unity
     guid: 8e8b62a5b8d6bf04782d548f0e44f665
+  - enabled: 1
+    path: Assets/ThirdLevel/Finish.unity
+    guid: 82f828b7c6b50f447a864a6f7135698c
   m_configObjects: {}

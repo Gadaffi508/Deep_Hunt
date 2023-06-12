@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     public string ýnformatoýnTower;
     public GameDead deadScene;
     public GameObject NextScene;
-    Vector2 boatFirstPos;
+    public Vector2 boatFirstPos;
     public bool finished = false;
 
     private void Awake()
@@ -72,11 +72,6 @@ public class GameManager : MonoBehaviour
         Healtbar.gameObject.SetActive(true);
         Goldtext.gameObject.SetActive(true);
         GoldImage.SetActive(true);
-        if (GameObject.FindGameObjectWithTag("Ship") != null)
-        {
-            boat = GameObject.FindGameObjectWithTag("Ship").gameObject;
-            boatFirstPos = boat.transform.position;
-        }
     }
 
     private void FixedUpdate()
@@ -91,9 +86,14 @@ public class GameManager : MonoBehaviour
         {
             NextScene.SetActive(true);
             boat.GetComponent<BoatController>().enabled = false;
+            boatFirstPos = boat.transform.position;
             NextScene.transform.DOScale(1, 1);
         }
 
+        if (GameObject.FindGameObjectWithTag("Ship") != null)
+        {
+            boat = GameObject.FindGameObjectWithTag("Ship").gameObject;
+        }
     }
 
 
@@ -129,7 +129,6 @@ public class GameManager : MonoBehaviour
         boat.SetActive(false);
         Goldtext.gameObject.SetActive(false);
         GoldImage.SetActive(false);
-        levelManager.levelM += 1;
         if (Health < 200)
         {
             Health += 50;
@@ -138,6 +137,7 @@ public class GameManager : MonoBehaviour
                 Health = 200;
             }
         }
+
         //levelManager.LoadMapScene();
         //StartCoroutine(loadCamDelay());
     }
@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
         HealtbarBG.SetActive(true);
         Healtbar.gameObject.SetActive(true);
         boat.SetActive(true);
-        boat.transform.position = new Vector3(0, boatFirstPos.y);
+        boat.transform.position = new Vector3(0, boatFirstPos.y + 0.2f);
     }
     public void CamActive()
     {
@@ -155,8 +155,9 @@ public class GameManager : MonoBehaviour
 
     public void ResetScene()
     {
-        NextScene.transform.DOScale(1, 0.2f).OnComplete(()=> NextScene.SetActive(false));
-        finished = true;
+        NextScene.transform.DOMoveY(1550, 0.1f);
+        NextScene.SetActive(false);
+        finished = false;
     }
 
     public void AddEnemyToList(GameObject enemy)

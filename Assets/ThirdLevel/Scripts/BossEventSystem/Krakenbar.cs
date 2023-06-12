@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Krakenbar : MonoBehaviour
@@ -22,6 +23,8 @@ public class Krakenbar : MonoBehaviour
 
         if (enemy.health <= 0)
         {
+            Healtbar.gameObject.SetActive(false);
+            HealtbarBG.gameObject.SetActive(false);
             panel.SetActive(true);
         }
     }
@@ -29,6 +32,10 @@ public class Krakenbar : MonoBehaviour
     {
 
         Healtbar.fillAmount = enemy.health / 4000;
+    }
+    public void FinishSceneLoad()
+    {
+        SceneManager.LoadScene(7);
     }
 
 }
