@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,6 +31,7 @@ public class MapManager : MonoBehaviour
 
     bool isOpen = false;
 
+    public event Action OnSceneChanged;
 
     private void Start()
     {
@@ -68,7 +70,6 @@ public class MapManager : MonoBehaviour
         mapPanel.SetActive(isOpen);
         canvas.gameObject.SetActive(isOpen);
 
-
         for (int i = 0; i <= index; i++)
         {
             mapLevels[i].SetActive(true);
@@ -96,7 +97,6 @@ public class MapManager : MonoBehaviour
 
         yield return new WaitForSeconds(delay);
 
-
         unLoad = SceneManager.UnloadSceneAsync(currentSceneIndex);
         while (unLoad != null)
         {
@@ -117,9 +117,18 @@ public class MapManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         yield return new WaitForEndOfFrame(); //döngüye girmesin yok düzelttim
+        GameManager.Instance.ResetScene();
+
+
+        if (index > 1)
+        {
+            GameManager.Instance.GameobjectBoat();
+        }
 
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(sceneIndex));
         index++;
+
+        OnSceneChanged?.Invoke();
 
         ClosePanel();
 
@@ -127,6 +136,7 @@ public class MapManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         fog.Close();
         isOpen = false;
+        
     }
 
     public void SetCanvasCamera(Camera cam)

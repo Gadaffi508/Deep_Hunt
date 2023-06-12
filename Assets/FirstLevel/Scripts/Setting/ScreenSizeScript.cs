@@ -19,11 +19,8 @@ public class ScreenSizeScript : MonoBehaviour
         resolutionDrop.ClearOptions();
         currentRefresh = Screen.currentResolution.refreshRate;
 
-        Debug.Log("ResulotionRate : " + currentRefresh);
-
         for (int i = 0; i < resolutions.Length; i++)
         {
-            Debug.Log("Resulation : " + resolutions[i]);
             if (resolutions[i].refreshRate == currentRefresh)
             {
                 resolutionList.Add(resolutions[i]);

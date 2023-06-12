@@ -36,7 +36,7 @@ public class LevelManager : MonoBehaviour
     {
         if (levelM>1)
         {
-            GameManager.Instance.GameobjectBoat();
+            //GameManager.Instance.GameobjectBoat();
         }
     }
     public void DelayCam()

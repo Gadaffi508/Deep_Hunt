@@ -14,26 +14,35 @@ public class TutorialSecond : MonoBehaviour
     public GameObject cam;
     int fullarea = 0;
     public Transform point1, point2, flypoin1, flyPoint2;
-    public GameObject normalEnemy, TankEnemy, flyEnemy,Panel;
+    public GameObject normalEnemy, TankEnemy, flyEnemy;
     public GameObject SpawnEnemy;
 
     public static TutorialSecond tutorialInst;
     public bool BuilTower = false;
-    bool finished = false;
+
+    public GameObject[] Bars;
 
     private void Start()
     {
         tutorialInst = this;
-
-        Panel.SetActive(false);
         ImageInformationwhite.SetActive(false);
         ImageInformationred.SetActive(false);
         ImageInformationgreen.SetActive(false);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         Destroy(boat.gameObject);
+    }
+
+    public void DestBar()
+    {
+        foreach (GameObject bar in Bars)
+        {
+            Destroy(bar);
+        }
+            
+
     }
 
     private void Update()
@@ -99,12 +108,6 @@ public class TutorialSecond : MonoBehaviour
             boat = GameObject.FindGameObjectWithTag("Ship").GetComponent<BoatController>();
             boat.GetComponent<BoatController>().enabled = true;
         }
-        if (finished == true && GameManager.Instance.enemyL.Count <= 0)
-        {
-            Panel.SetActive(true);
-            boat.GetComponent<BoatController>().enabled = false;
-            Panel.transform.DOScale(1,1);
-        }
     }
 
     public void DestroyGameobjecs()
@@ -135,7 +138,7 @@ public class TutorialSecond : MonoBehaviour
         yield return new WaitForSeconds(1);
         Instantiate(normalEnemy, point2.position, Quaternion.identity);
         Instantiate(flyEnemy, flyPoint2.position, Quaternion.identity);
-        finished = true;
+        GameManager.Instance.finished = true;
 
     }
 }

@@ -9,13 +9,16 @@ public class CameraManager : MonoBehaviour
     private Camera cam;
 
     public float followSpeed;
+    public float minX, maxX;
 
     private Vector3 startingPosition;
     private float yOffset;
 
     private Transform target;
-    public Transform Target { get { return target; } 
-        set 
+    public Transform Target
+    {
+        get { return target; }
+        set
         {
             target = value;
 
@@ -23,7 +26,7 @@ public class CameraManager : MonoBehaviour
 
             if (targetFollowable != null)
                 targetType = targetFollowable.GetTargetType();
-        } 
+        }
     }
 
     private TargetType targetType;
@@ -43,19 +46,22 @@ public class CameraManager : MonoBehaviour
     {
         if (target is null) return;
 
-        if(targetType is TargetType.MapLevel)
+        if (targetType is TargetType.MapLevel)
         {
             yOffset = target.position.y;
         }
-        else if(targetType is TargetType.Ship)
+        else if (targetType is TargetType.Ship)
         {
             yOffset = startingPosition.y;
         }
 
         Vector3 followPosition = new Vector3(target.position.x, yOffset, startingPosition.z);
 
-        transform.position = Vector3.Lerp(transform.position, followPosition, followSpeed * Time.deltaTime);
+        followPosition.x = Mathf.Clamp(followPosition.x, minX, maxX);
 
+        transform.position = Vector3.Lerp(transform.position, followPosition, followSpeed * Time.deltaTime);
     }
+
+
 
 }

@@ -208,10 +208,34 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1729809897}
+        m_TargetAssemblyTypeName: TutorialSecond, Assembly-CSharp
+        m_MethodName: DestBar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 708452}
         m_TargetAssemblyTypeName: TestMapButton, Assembly-CSharp
         m_MethodName: OpenMap
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 708447}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -447,6 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Goldtext: {fileID: 4989541073084662129}
+  GoldImage: {fileID: 4989541073084662131}
   HealthText: {fileID: 0}
   boat: {fileID: 0}
   Cam: {fileID: 0}
@@ -468,6 +493,8 @@ MonoBehaviour:
   enemyL: []
   "\u0131nformato\u0131nTower": 
   deadScene: {fileID: 2060292815}
+  NextScene: {fileID: 403742870}
+  finished: 0
 --- !u!4 &175835439
 Transform:
   m_ObjectHideFlags: 0
@@ -2625,7 +2652,6 @@ GameObject:
   - component: {fileID: 1217006311}
   - component: {fileID: 1217006310}
   - component: {fileID: 1217006313}
-  - component: {fileID: 1217006314}
   - component: {fileID: 1217006315}
   - component: {fileID: 1217006316}
   m_Layer: 0
@@ -2736,22 +2762,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &1217006314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217006309}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7ddbaa59a67c2747811da59750c9da0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Fog: {fileID: 1921405811}
-  speed: 2
-  delayAmount: {x: 0, y: 0, z: 0}
-  camM: 0
 --- !u!114 &1217006315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2777,6 +2787,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: 5
+  minX: 0
+  maxX: 0
 --- !u!1 &1321392480
 GameObject:
   m_ObjectHideFlags: 0
@@ -3081,7 +3093,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1217006314}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CameraTutorial, Assembly-CSharp
         m_MethodName: FollowShip
         m_Mode: 1
@@ -3383,9 +3395,13 @@ MonoBehaviour:
   normalEnemy: {fileID: 3635882717636900947, guid: b7438778231f1124aa10abccafd60316, type: 3}
   TankEnemy: {fileID: 4061449317861404780, guid: 9fcc5d2461e18dd4889f9423d87f5a94, type: 3}
   flyEnemy: {fileID: 8077027693354405023, guid: 6bf4d797ebb34264bb58c467a5290f0d, type: 3}
-  Panel: {fileID: 403742870}
   SpawnEnemy: {fileID: 0}
   BuilTower: 0
+  Bars:
+  - {fileID: 4989541073084662131}
+  - {fileID: 4989541074307171451}
+  - {fileID: 4989541074626330910}
+  - {fileID: 4989541073835665872}
 --- !u!1 &1734435769
 GameObject:
   m_ObjectHideFlags: 0
@@ -4223,9 +4239,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1914768398}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TestMapButton, Assembly-CSharp
-        m_MethodName: OpenMap
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1729809897}
+        m_TargetAssemblyTypeName: TutorialSecond, Assembly-CSharp
+        m_MethodName: DestBar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

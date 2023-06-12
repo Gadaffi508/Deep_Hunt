@@ -1,13 +1,16 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GameManager : MonoBehaviour
 {
     public Text Goldtext;
+    public GameObject GoldImage;
     public Text HealthText;
 
     public GameObject boat;
@@ -40,6 +43,9 @@ public class GameManager : MonoBehaviour
 
     public string ýnformatoýnTower;
     public GameDead deadScene;
+    public GameObject NextScene;
+    Vector2 boatFirstPos;
+    public bool finished = false;
 
     private void Awake()
     {
@@ -60,12 +66,16 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Start()
     {
+        NextScene.SetActive(false);
         yield return new WaitForSeconds(1);
         HealtbarBG.SetActive(true);
         Healtbar.gameObject.SetActive(true);
+        Goldtext.gameObject.SetActive(true);
+        GoldImage.SetActive(true);
         if (GameObject.FindGameObjectWithTag("Ship") != null)
         {
             boat = GameObject.FindGameObjectWithTag("Ship").gameObject;
+            boatFirstPos = boat.transform.position;
         }
     }
 
@@ -74,8 +84,16 @@ public class GameManager : MonoBehaviour
         Goldtext.text = Gold.ToString();
         if (levelM)
         {
-            levelManager = GameObject.FindGameObjectWithTag("Level").gameObject.GetComponent<LevelManager>();   
+            levelManager = GameObject.FindGameObjectWithTag("Level").gameObject.GetComponent<LevelManager>();
         }
+
+        if (finished == true && enemyL.Count <= 0)
+        {
+            NextScene.SetActive(true);
+            boat.GetComponent<BoatController>().enabled = false;
+            NextScene.transform.DOScale(1, 1);
+        }
+
     }
 
 
@@ -109,6 +127,8 @@ public class GameManager : MonoBehaviour
         HealtbarBG.SetActive(false);
         Healtbar.gameObject.SetActive(false);
         boat.SetActive(false);
+        Goldtext.gameObject.SetActive(false);
+        GoldImage.SetActive(false);
         levelManager.levelM += 1;
         if (Health < 200)
         {
@@ -126,15 +146,17 @@ public class GameManager : MonoBehaviour
         HealtbarBG.SetActive(true);
         Healtbar.gameObject.SetActive(true);
         boat.SetActive(true);
+        boat.transform.position = new Vector3(0, boatFirstPos.y);
     }
     public void CamActive()
     {
         Cam.SetActive(true);
     }
-    IEnumerator loadCamDelay()
+
+    public void ResetScene()
     {
-        yield return new WaitForSeconds(0.4f);
-        Cam.SetActive(false);
+        NextScene.transform.DOScale(1, 0.2f).OnComplete(()=> NextScene.SetActive(false));
+        finished = true;
     }
 
     public void AddEnemyToList(GameObject enemy)

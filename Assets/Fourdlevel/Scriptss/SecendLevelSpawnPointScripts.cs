@@ -16,14 +16,10 @@ public class SecendLevelSpawnPointScripts : MonoBehaviour
     private Vector2 FlyPoint;
     private Vector2 DeepPoint;
     private Transform target;
-    public bool finished;
-    private void Start()
-    {
-        SpawnerTwo();
-    }
 
-    private void SpawnerTwo()
+    private IEnumerator Start()
     {
+        yield return new WaitForSeconds(10);
         StartCoroutine(SpawnerTimer());
     }
 
@@ -255,6 +251,6 @@ public class SecendLevelSpawnPointScripts : MonoBehaviour
             }
         }
 
-        finished = true;
+        GameManager.Instance.finished = true;
     }
 }

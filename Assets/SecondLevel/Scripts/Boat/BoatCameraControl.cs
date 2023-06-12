@@ -17,6 +17,20 @@ public class BoatCameraControl : MonoBehaviour, IFollowable
 
     private void Start()
     {
+        CameraSet();
+
+    }
+    private void OnEnable()
+    {
+        MapManager.instance.OnSceneChanged += CameraSet;
+    }
+    private void OnDisable()
+    {
+        MapManager.instance.OnSceneChanged -= CameraSet;
+    }
+
+    public void CameraSet()
+    {
         CameraManager.instance.Target = this.transform;
     }
 }

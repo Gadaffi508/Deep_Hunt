@@ -28,8 +28,6 @@ public class SpawnController : MonoBehaviour
     private int random1;
     private int vaweControl = 1;
     private bool WaveCheck;
-
-    public bool finished;
     void Start()
     {
         StartCoroutine(Timer());
@@ -97,7 +95,7 @@ public class SpawnController : MonoBehaviour
                     yield return new WaitForSeconds(3f);
                 }
                 yield return new WaitForSeconds(3f);
-                finished = true;
+                GameManager.Instance.finished = true;
             }
         }
     }

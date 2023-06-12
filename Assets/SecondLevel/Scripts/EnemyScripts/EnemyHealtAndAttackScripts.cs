@@ -77,6 +77,7 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
         {
             GameManager.Instance.Gold += 3;
             StartCoroutine(Timer());
+            GameManager.Instance.finished = true;
         }
     }
 }
