@@ -2626,6 +2626,8 @@ GameObject:
   - component: {fileID: 1217006310}
   - component: {fileID: 1217006313}
   - component: {fileID: 1217006314}
+  - component: {fileID: 1217006315}
+  - component: {fileID: 1217006316}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2741,7 +2743,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217006309}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7ddbaa59a67c2747811da59750c9da0, type: 3}
   m_Name: 
@@ -2750,6 +2752,31 @@ MonoBehaviour:
   speed: 2
   delayAmount: {x: 0, y: 0, z: 0}
   camM: 0
+--- !u!114 &1217006315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217006309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b09e8fe0aee184c84e8c30227870a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1217006316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217006309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541fb309c981e1841bdeacf774f6fca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followSpeed: 5
 --- !u!1 &1321392480
 GameObject:
   m_ObjectHideFlags: 0

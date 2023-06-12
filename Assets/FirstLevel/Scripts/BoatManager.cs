@@ -30,25 +30,38 @@ public class BoatManager : MonoBehaviour
     }
     public IEnumerator Loading()
     {
-        SceneManager.LoadScene(3, LoadSceneMode.Additive);
-        load = SceneManager.LoadSceneAsync(sceneID, LoadSceneMode.Additive);
-        unLoad = SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
-        Debug.Log(unLoad);
-        while (load != null && unLoad != null)
+        //Load Map
+        load = SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
+        while (load != null)
         {
             if (load.isDone)
                 load = null;
 
+            yield return new WaitForEndOfFrame();
+        }
+        yield return null;
+        //Load level scene
+        load = SceneManager.LoadSceneAsync(sceneID, LoadSceneMode.Additive);
+        while(load != null)
+        {
+            if (load.isDone)
+                load = null;
+
+            yield return new WaitForEndOfFrame();
+        }
+        yield return new WaitForEndOfFrame();
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(sceneID));
+
+        //Unload Select scene
+        unLoad = SceneManager.UnloadSceneAsync(SceneManager.GetSceneByBuildIndex(1));
+        while (unLoad != null)
+        {
             if (unLoad.isDone)
                 unLoad = null; 
 
             yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForEndOfFrame();
-
-        Debug.Log("Loaded");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(sceneID));
-        MapManager.instance.SetCanvasCamera();
+        yield return null;
     }
 
     public void Save(string KeyName, int _direction)

@@ -21,12 +21,14 @@ public class MapManager : MonoBehaviour
     [SerializeField] private MapFog fog;
     [SerializeField] private float delay;
 
-    private int index = 0;
+    private int index = 1;
 
     AsyncOperation load;
     AsyncOperation unLoad;
 
     private int currentSceneIndex;
+
+    bool isOpen = false;
 
 
     private void Start()
@@ -35,8 +37,8 @@ public class MapManager : MonoBehaviour
         {
             level.SetActive(false);
         }
-        mapLevels[index].SetActive(true);
         mapPanel.SetActive(false);
+        canvas.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -48,7 +50,7 @@ public class MapManager : MonoBehaviour
 
             if(hit.collider != null)
             {
-                MapLoader loader = hit.collider.GetComponent<MapLoader>();
+                MapLevel loader = hit.collider.GetComponent<MapLevel>();
                 LoadScene(loader.SceneIndex);
             }
         }
@@ -61,14 +63,18 @@ public class MapManager : MonoBehaviour
 
     public void OpenMap()
     {
-        index++;
+        isOpen = !isOpen;
 
-        mapPanel.SetActive(true);
+        mapPanel.SetActive(isOpen);
+        canvas.gameObject.SetActive(isOpen);
 
-        GameObject currentLevel = mapLevels[index];
-        currentLevel.SetActive(true);
 
-        Camera.main.GetComponent<CameraTutorial>().Target = mapLevels[index].transform;
+        for (int i = 0; i <= index; i++)
+        {
+            mapLevels[i].SetActive(true);
+        }
+
+        CameraManager.instance.Target = mapLevels[index].transform;
     }
 
     public void LoadScene(int sceneIndex)
@@ -93,16 +99,6 @@ public class MapManager : MonoBehaviour
 
 
         unLoad = SceneManager.UnloadSceneAsync(currentSceneIndex);
-        load = SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive);
-
-        while (load != null)
-        {
-            if (load.isDone)
-            {
-                load = null;
-            }
-            yield return new WaitForEndOfFrame();
-        }
         while (unLoad != null)
         {
             if (unLoad.isDone)
@@ -111,14 +107,24 @@ public class MapManager : MonoBehaviour
             }
             yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForEndOfFrame();
 
-        SetCanvasCamera();
+        load = SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive);
+        while (load != null)
+        {
+            if (load.isDone)
+            {
+                load = null;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+        yield return new WaitForEndOfFrame(); //
+
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(sceneIndex));
+        index++;
     }
 
-    public void SetCanvasCamera()
+    public void SetCanvasCamera(Camera cam)
     {
-        canvas.worldCamera = Camera.main;
+        canvas.worldCamera = cam;
     }
 }
