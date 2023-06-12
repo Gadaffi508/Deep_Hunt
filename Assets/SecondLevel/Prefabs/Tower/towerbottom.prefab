@@ -231,8 +231,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  xScale: 0
-  yScale: 0
+  xScale: 0.7
+  yScale: 0.7
   attackSpeed: 2.6
 --- !u!1 &5084475658254553820
 GameObject:
@@ -370,6 +370,7 @@ MonoBehaviour:
   TowerUpgrade: {fileID: 0}
   upgrade: 0
   bulletupgrade: 0
+  "Informat\u0131on": 
 --- !u!61 &6598605619439820119
 BoxCollider2D:
   m_ObjectHideFlags: 0
