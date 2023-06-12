@@ -154,7 +154,7 @@ MonoBehaviour:
   damage: 15
   healthText: {fileID: 0}
   GoldText: {fileID: 0}
-  gold: 100
+  gold: 70
   MoveDistance: 0.1
   DistanceSpeed: 1
 --- !u!61 &841335748971279522

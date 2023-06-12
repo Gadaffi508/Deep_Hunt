@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -22,8 +20,7 @@ public class EelsEnemy : MonoBehaviour
     private float timeUntilFire;
     private void OnDrawGizmosSelected()
     {
-        Handles.color = Color.white;
-        Handles.DrawWireDisc(transform.position, transform.forward, attackRange);
+        //Handles.DrawWireDisc(transform.position, transform.forward, attackRange);
     }
     void Start()
     {

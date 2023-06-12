@@ -10,7 +10,6 @@ public class TutorialSecond : MonoBehaviour
     public GameObject ImageInformationred;
     public GameObject ImageInformationgreen;
     public GameObject[] warning;
-    BoatController boat;
     public GameObject cam;
     int fullarea = 0;
     public Transform point1, point2, flypoin1, flyPoint2;
@@ -32,7 +31,7 @@ public class TutorialSecond : MonoBehaviour
 
     private void OnDisable()
     {
-        Destroy(boat.gameObject);
+        Destroy(GameManager.Instance.boat.GetComponent<BoatController>().gameObject);
     }
 
     public void DestBar()
@@ -105,8 +104,7 @@ public class TutorialSecond : MonoBehaviour
         }
         if (fullarea > 2)
         {
-            boat = GameObject.FindGameObjectWithTag("Ship").GetComponent<BoatController>();
-            boat.GetComponent<BoatController>().enabled = true;
+            GameManager.Instance.boat.GetComponent<BoatController>().enabled = true;
         }
     }
 

@@ -3192,8 +3192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: 5
-  minX: 0
-  maxX: 0
+  minX: -12
+  maxX: 12
 --- !u!114 &2025467579
 MonoBehaviour:
   m_ObjectHideFlags: 0

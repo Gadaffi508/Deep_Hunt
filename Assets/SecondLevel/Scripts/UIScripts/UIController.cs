@@ -23,7 +23,6 @@ public class UIController : MonoBehaviour
     }
     public void Hide()
     {
-        Debug.Log(transform.name + " is hided");
         DOTween.To(() => myRect.anchoredPosition, x => myRect.anchoredPosition = x, new Vector2(myRect.anchoredPosition.x, inActiveY), 1);
     }
 }

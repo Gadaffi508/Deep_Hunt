@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class FlyEnemy : MonoBehaviour
 {
@@ -23,8 +20,8 @@ public class FlyEnemy : MonoBehaviour
     private Animator animator;
     private void OnDrawGizmosSelected()
     {
-        Handles.color = Color.white;
-        Handles.DrawWireDisc(transform.position, transform.forward, attackRange);
+        //Handles.color = Color.white;
+        //Handles.DrawWireDisc(transform.position, transform.forward, attackRange);
     }
     private void Start()
     {

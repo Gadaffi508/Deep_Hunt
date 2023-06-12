@@ -26,8 +26,7 @@ public class WhirlpoolEnemy : MonoBehaviour
     public AudioClip blob;
     private void OnDrawGizmosSelected()
     {
-        Handles.color = Color.white;
-        Handles.DrawWireDisc(transform.position, transform.forward, attackRange);
+        //Handles.DrawWireDisc(transform.position, transform.forward, attackRange);
     }
     void Start()
     {

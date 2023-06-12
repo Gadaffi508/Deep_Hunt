@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EnemyHealtAndAttackScripts : MonoBehaviour
 {
@@ -77,7 +74,6 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
         {
             GameManager.Instance.Gold += 3;
             StartCoroutine(Timer());
-            GameManager.Instance.finished = true;
         }
     }
 }

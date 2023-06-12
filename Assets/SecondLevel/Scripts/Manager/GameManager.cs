@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     public string ýnformatoýnTower;
     public GameDead deadScene;
-    public GameObject NextScene;
+    public GameDead NextScene;
     public Vector2 boatFirstPos;
     public bool finished = false;
 
@@ -66,7 +66,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Start()
     {
-        NextScene.SetActive(false);
         yield return new WaitForSeconds(1);
         HealtbarBG.SetActive(true);
         Healtbar.gameObject.SetActive(true);
@@ -84,15 +83,22 @@ public class GameManager : MonoBehaviour
 
         if (finished == true && enemyL.Count <= 0)
         {
-            NextScene.SetActive(true);
+            NextScene.Show();
             boat.GetComponent<BoatController>().enabled = false;
             boatFirstPos = boat.transform.position;
-            NextScene.transform.DOScale(1, 1);
         }
 
         if (GameObject.FindGameObjectWithTag("Ship") != null)
         {
             boat = GameObject.FindGameObjectWithTag("Ship").gameObject;
+        }
+
+        for (int i = 0; i < enemyL.Count; i++)
+        {
+            if (enemyL[i] == null)
+            {
+                enemyL.Clear();
+            }
         }
     }
 
@@ -155,9 +161,8 @@ public class GameManager : MonoBehaviour
 
     public void ResetScene()
     {
-        NextScene.transform.DOMoveY(1550, 0.1f);
-        NextScene.SetActive(false);
-        finished = false;
+        //finished = false;
+        NextScene.Hide();
     }
 
     public void AddEnemyToList(GameObject enemy)
