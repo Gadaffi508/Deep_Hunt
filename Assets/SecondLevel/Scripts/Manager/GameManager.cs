@@ -118,8 +118,8 @@ public class GameManager : MonoBehaviour
                 Health = 200;
             }
         }
-        levelManager.LoadMapScene();
-        StartCoroutine(loadCamDelay());
+        //levelManager.LoadMapScene();
+        //StartCoroutine(loadCamDelay());
     }
     public void GameobjectBoat()
     {

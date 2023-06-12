@@ -696,6 +696,7 @@ MonoBehaviour:
   GirdapEnemy: {fileID: 8489619442129107111, guid: 013c6be35f2cbac4ea09f9a59bddea3e, type: 3}
   FlyEnemy: {fileID: 8077027693354405023, guid: 6bf4d797ebb34264bb58c467a5290f0d, type: 3}
   clambEnemy: {fileID: 749815284613099196, guid: 55b511210c13f5642bfb8bdf8b1209cf, type: 3}
+  finished: 0
 --- !u!4 &807498998
 Transform:
   m_ObjectHideFlags: 0
@@ -808,6 +809,8 @@ GameObject:
   - component: {fileID: 856027546}
   - component: {fileID: 856027545}
   - component: {fileID: 856027544}
+  - component: {fileID: 856027550}
+  - component: {fileID: 856027549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -822,7 +825,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856027543}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 473b70e7966fd8240a59aa44bbd6c3d8, type: 3}
   m_Name: 
@@ -932,6 +935,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &856027549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856027543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b09e8fe0aee184c84e8c30227870a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &856027550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856027543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541fb309c981e1841bdeacf774f6fca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followSpeed: 5
 --- !u!1 &930020078
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,8 +37,7 @@ public class MapManager : MonoBehaviour
         {
             level.SetActive(false);
         }
-        mapPanel.SetActive(false);
-        canvas.gameObject.SetActive(false);
+        ClosePanel();
     }
 
     private void Update()
@@ -59,6 +58,7 @@ public class MapManager : MonoBehaviour
     public void ClosePanel()
     {
         mapPanel.SetActive(false);
+        canvas.gameObject.SetActive(false);
     }
 
     public void OpenMap()
@@ -88,12 +88,11 @@ public class MapManager : MonoBehaviour
         //Camera zoom
         while(Camera.main.orthographicSize > 3)
         {
-            Camera.main.orthographicSize -= Time.deltaTime;
+            Camera.main.orthographicSize -= Time.deltaTime * 3f;
             yield return new WaitForEndOfFrame();
         }
 
-        fog.Show();
-        fog.gameObject.transform.DOMoveY(mapLevels[index].transform.position.y, 1);
+        fog.Show(mapLevels[index].transform.position.y);
 
         yield return new WaitForSeconds(delay);
 
@@ -117,10 +116,17 @@ public class MapManager : MonoBehaviour
             }
             yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForEndOfFrame(); //
+        yield return new WaitForEndOfFrame(); //döngüye girmesin yok düzelttim
 
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(sceneIndex));
         index++;
+
+        ClosePanel();
+
+        fog.Hide();
+        yield return new WaitForSeconds(delay);
+        fog.Close();
+        isOpen = false;
     }
 
     public void SetCanvasCamera(Camera cam)

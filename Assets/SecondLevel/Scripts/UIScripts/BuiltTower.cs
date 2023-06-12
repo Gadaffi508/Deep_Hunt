@@ -23,7 +23,7 @@ public class BuiltTower : MonoBehaviour
     {
         if (GameManager.Instance.ýnformatoýnTower != null)
         {
-            ýnformatýon.text = GameManager.Instance.ýnformatoýnTower;
+            //ýnformatýon.text = GameManager.Instance.ýnformatoýnTower; boþver silecem
         }
 
         towerGold = GetComponent<TowerS>();
