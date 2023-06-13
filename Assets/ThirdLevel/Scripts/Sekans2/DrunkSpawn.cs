@@ -18,7 +18,7 @@ public class DrunkSpawn : MonoBehaviour
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraThird>();
     }
 
-    void BossSekans3Calistir()
+    public void BossSekans3Calistir()
     {
         animator.SetBool("krakenScream", true);
         
@@ -32,6 +32,7 @@ public class DrunkSpawn : MonoBehaviour
 
     public void DrunkEnemySpawn()
     {
+        CameraThird.instance.BaslatTitreme();
         ChangePoint();
         for (int i = 0; i < point.Length; i++)
         {

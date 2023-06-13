@@ -944,8 +944,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080272425}
-        m_TargetAssemblyTypeName: Krakenbar, Assembly-CSharp
+      - m_Target: {fileID: 180965563}
+        m_TargetAssemblyTypeName: UIControl, Assembly-CSharp
         m_MethodName: FinishSceneLoad
         m_Mode: 1
         m_Arguments:
@@ -3073,6 +3073,7 @@ GameObject:
   - component: {fileID: 2025467573}
   - component: {fileID: 2025467579}
   - component: {fileID: 2025467578}
+  - component: {fileID: 2025467580}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3204,6 +3205,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44b09e8fe0aee184c84e8c30227870a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2025467580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025467572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473b70e7966fd8240a59aa44bbd6c3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2110706819

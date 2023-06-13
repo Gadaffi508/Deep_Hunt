@@ -33,9 +33,5 @@ public class Krakenbar : MonoBehaviour
 
         Healtbar.fillAmount = enemy.health / 4000;
     }
-    public void FinishSceneLoad()
-    {
-        SceneManager.LoadScene(7);
-    }
 
 }
