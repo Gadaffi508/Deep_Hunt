@@ -75,10 +75,9 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Goldtext.text = Gold.ToString();
-        if (levelM)
+        if (Goldtext != null)
         {
-            levelManager = GameObject.FindGameObjectWithTag("Level").gameObject.GetComponent<LevelManager>();
+            Goldtext.text = Gold.ToString();
         }
 
         if (finished == true && enemyL.Count <= 0)
@@ -133,6 +132,7 @@ public class GameManager : MonoBehaviour
         HealtbarBG.SetActive(false);
         Healtbar.gameObject.SetActive(false);
         boat.SetActive(false);
+        boat.GetComponent<BoatController>().enabled = true;
         Goldtext.gameObject.SetActive(false);
         GoldImage.SetActive(false);
         if (Health < 200)
@@ -152,6 +152,9 @@ public class GameManager : MonoBehaviour
         HealtbarBG.SetActive(true);
         Healtbar.gameObject.SetActive(true);
         boat.SetActive(true);
+        Goldtext.gameObject.SetActive(true);
+        GoldImage.SetActive(true);
+        boat.GetComponent<BoatController>().enabled = true;
         boat.transform.position = new Vector3(0, boatFirstPos.y + 0.2f);
     }
     public void CamActive()
@@ -161,7 +164,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetScene()
     {
-        //finished = false;
+        finished = false;
         NextScene.Hide();
     }
 

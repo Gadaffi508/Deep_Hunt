@@ -528,7 +528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 5
   minX: -12
-  maxX: 8
+  maxX: 7
 --- !u!1001 &1229697595
 PrefabInstance:
   m_ObjectHideFlags: 0

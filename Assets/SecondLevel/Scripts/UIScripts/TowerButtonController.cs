@@ -36,7 +36,7 @@ public class TowerButtonController : UIController
             if (tutImage == true)
             {
                 ImageInfor.SetActive(true);
-                Destroy(ImageInfor, 2f);
+                Destroy(ImageInfor, 7f);
                 tutImage = false;
                 TutorialSecond.tutorialInst.BuilTower = true;
             }

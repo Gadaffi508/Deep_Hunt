@@ -17,6 +17,7 @@ public class ClambEnemy : MonoBehaviour
 
     private AudioSource audioSource;
     public AudioClip ses;
+    int hurt = 0;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -59,9 +60,14 @@ public class ClambEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Arrow"))
         {
-            animator.SetBool("death",true);
+            hurt++;
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            if (hurt > 0)
+            {
+                animator.SetBool("death", true);
+
+                Destroy(gameObject);
+            }
         }
     }
 

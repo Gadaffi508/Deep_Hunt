@@ -20,6 +20,7 @@ public class TutorialSecond : MonoBehaviour
     public bool BuilTower = false;
 
     public GameObject[] Bars;
+    public GameObject LoadBoat;
 
     private void Start()
     {
@@ -27,11 +28,13 @@ public class TutorialSecond : MonoBehaviour
         ImageInformationwhite.SetActive(false);
         ImageInformationred.SetActive(false);
         ImageInformationgreen.SetActive(false);
+        LoadBoat.SetActive(true);
     }
 
     private void OnDisable()
     {
         Destroy(GameManager.Instance.boat.GetComponent<BoatController>().gameObject);
+        LoadBoat.SetActive(false);
     }
 
     public void DestBar()
@@ -61,7 +64,7 @@ public class TutorialSecond : MonoBehaviour
                     if (ImageInformationwhite != null)
                     {
                         ImageInformationwhite.SetActive(true);
-                        Destroy(ImageInformationwhite, 3f);
+                        Destroy(ImageInformationwhite, 7f);
                         if (warning[0] != null)
                         {
                             warning[0].SetActive(false);
@@ -74,7 +77,7 @@ public class TutorialSecond : MonoBehaviour
                     if (ImageInformationred != null)
                     {
                         ImageInformationred.SetActive(true);
-                        Destroy(ImageInformationred, 3f);
+                        Destroy(ImageInformationred, 7f);
                         if (warning[1] != null)
                         {
                             warning[1].SetActive(false);
@@ -87,7 +90,7 @@ public class TutorialSecond : MonoBehaviour
                     if (ImageInformationgreen != null)
                     {
                         ImageInformationgreen.SetActive(true);
-                        Destroy(ImageInformationgreen, 3f);
+                        Destroy(ImageInformationgreen, 7f);
                         if (warning[2] != null)
                         {
                             warning[2].SetActive(false);

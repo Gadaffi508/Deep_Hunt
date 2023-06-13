@@ -13,11 +13,6 @@ public class ArrowBottom : MonoBehaviour
     public string Name;
     private EnemyHealtAndAttackScripts enemyHealth;
     public Transform target;
-    private void Start()
-    {
-       
-        Damage = 15;
-    }
 
     public void SetTarget(Transform _target)
     {

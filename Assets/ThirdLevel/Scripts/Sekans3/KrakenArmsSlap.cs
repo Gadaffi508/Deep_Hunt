@@ -17,8 +17,9 @@ public class KrakenArmsSlap : MonoBehaviour
     {
         StartCoroutine(Timer());
     }
-    void Start()
+    IEnumerator Start()
     {
+        yield return new WaitForSeconds(1);
         ship = GameObject.FindGameObjectWithTag("Ship").transform;
     }
     private void ArmSpawner()

@@ -10,9 +10,9 @@ public class DrunkSpawn : MonoBehaviour
     private Transform target;
     private Animator animator;
     private CameraThird camera;
-    void Start()
+    IEnumerator Start()
     {
-       
+        yield return new WaitForSeconds(1);
         target = GameObject.FindGameObjectWithTag("Ship").transform;
         animator = GetComponent<Animator>();
         camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraThird>();

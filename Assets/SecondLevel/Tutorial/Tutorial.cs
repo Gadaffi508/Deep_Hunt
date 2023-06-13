@@ -41,7 +41,7 @@ public class Tutorial : MonoBehaviour
 
         captanImagefirst.SetActive(false);
         Text1.SetActive(false);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
     
 }

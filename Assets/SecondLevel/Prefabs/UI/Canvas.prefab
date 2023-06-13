@@ -3455,7 +3455,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inActiveY: 0
-  finished: 0
 --- !u!1 &2179741213325783241
 GameObject:
   m_ObjectHideFlags: 0
@@ -3615,7 +3614,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Zamanla Gemiyi \nOnar\u0131r"
+  m_Text: "Y\xFCksek sald\u0131r\u0131\nh\u0131z\u0131 d\xFC\u015F\xFCk hasar"
 --- !u!1 &2908457167147223596
 GameObject:
   m_ObjectHideFlags: 0
@@ -3788,7 +3787,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inActiveY: 0
-  finished: 1
 --- !u!1 &3390641232143551361
 GameObject:
   m_ObjectHideFlags: 0
@@ -3868,7 +3866,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Y\xFCksek Sald\u0131r\u0131 H\u0131z\u0131\nD\xFC\u015F\xFCk Hasar"
+  m_Text: "Zamanla Gemiyi\nOnar\u0131r"
 --- !u!1 &4884756684894834618
 GameObject:
   m_ObjectHideFlags: 0
@@ -4020,6 +4018,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2804462573710653581, guid: e10967396b69b1748903aae1d9d659fd, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: GameobjectBoatActive
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4279,7 +4289,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Gemi Denizi Boylad\u0131"
+  m_Text: "ALT + F4 \xE7ekin"
 --- !u!1 &5921111138072133880
 GameObject:
   m_ObjectHideFlags: 0
@@ -4359,7 +4369,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Yava\u015F Sald\u0131r\u0131 H\u0131z\u0131\n\xD6l\xFCmc\xFCl Hasar"
+  m_Text: "Al\u0131nan hasar\u0131 azalt\u0131r"
 --- !u!1 &6892855172928189130
 GameObject:
   m_ObjectHideFlags: 0
@@ -4775,7 +4785,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Al\u0131nan Hasar\u0131 \nAzalt\u0131r"
+  m_Text: "Yava\u015F sald\u0131r\u0131 h\u0131z\u0131 \xD6l\xFCmc\xFCl hasar"
 --- !u!1 &7871242491901901297
 GameObject:
   m_ObjectHideFlags: 0
@@ -5058,6 +5068,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2804462573710653581, guid: e10967396b69b1748903aae1d9d659fd, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ResetScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3081420305090717799}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8012375577267768704}
         m_TargetAssemblyTypeName: GameDead, Assembly-CSharp
         m_MethodName: LoadRery
@@ -5065,7 +5099,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

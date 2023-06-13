@@ -8,8 +8,9 @@ public class StoneFall : MonoBehaviour
     private Transform target;
     Vector2 warningPos;
     Vector2 warningPos2;
-    void Start()
+    IEnumerator Start()
     {
+        yield return new WaitForSeconds(1);
         target = GameObject.FindGameObjectWithTag("Ship").GetComponent<Transform>();
     }
 
