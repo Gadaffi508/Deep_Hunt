@@ -418,7 +418,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 57
+    m_FontSize: 49
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -429,7 +429,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Tebrikler Art\u0131k A\xE7\u0131k Denizler A\xE7\u0131labilirsin"
+  m_Text: Congratulations You Can Now Sail The High Seas
 --- !u!222 &186230685
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -509,7 +509,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Devam Et Kaptan
+  m_Text: Continue Captain
 --- !u!222 &292843309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1044,7 +1044,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Al\u0131nan Hasar\u0131 azalt\u0131r"
+  m_Text: 'Reduces the Damage Taken
+
+    65Gold'
 --- !u!222 &674248015
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1088,7 +1090,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 24}
   m_SizeDelta: {x: 400, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &723246516
@@ -1104,7 +1106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1124,7 +1126,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "ALT + F4 \xE7ekin"
+  m_Text: Please Press ALT+F4
 --- !u!222 &723246517
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1204,8 +1206,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Topun \xFCzerine bir kez t\u0131klayarak kulenin seviyesini geli\u015Ftirebilirsin
-    veya ate\u015Fledi\u011Fin top de\u011Fi\u015Ftirebilirsin."
+  m_Text: "You can click the tower for upgrade and changing its ammo\r.\n"
 --- !u!222 &728945014
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1906,7 +1907,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Sald\u0131r\u0131 h\u0131z\u0131 normal\nHasar\u0131 normal"
+  m_Text: 'Attack Speed Normal
+
+    Attack Damage Normal
+
+    35Gold'
 --- !u!222 &1110322013
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2110,9 +2115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ye\u015Fil noktalar destek kulesini temsil eder. Ald\u0131\u011F\u0131n\u0131z
-    Hasar\u0131n\u0131z\u0131 d\xFC\u015F\xFCren veya can\u0131n\u0131z\u0131 y\xFCkselten
-    kulelerin bulundu\u011Fu noktalar."
+  m_Text: The wooden dots representing the support towers
 --- !u!222 &1142441593
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2192,8 +2195,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Tidal Armada' ya Ho\u015Fgeldin\nHadi sana nas\u0131l savunaca\u011F\u0131n\u0131
-    ve \nCanavar avlayaca\u011F\u0131n\u0131 g\xF6stereyim."
+  m_Text: "Welcome to Tidal Armada\r\nLet me show you how to defend yourself and
+    \r\nteach you to kill the monsters "
 --- !u!222 &1149407123
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2525,7 +2528,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: devam et...
+  m_Text: continue...
 --- !u!222 &1415085140
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2845,8 +2848,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "K\u0131rm\u0131z\u0131 noktalar denizdeki canl\u0131lara hasar veren \xF6zel
-    bir nokta. D\xFC\u015Fmanlar\u0131 etkisiz hale getirmek i\xE7in kullan\u0131l\u0131r."
+  m_Text: The red dots are the special area for defending yourself against sea monsters
 --- !u!222 &1655280037
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3000,7 +3002,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xD6l\xFCmc\xFCl Hasar\nD\xFC\u015F\xFCk sald\u0131r\u0131 h\u0131z\u0131"
+  m_Text: "Deadly Damage\nAttack Speed Low \n45Gold"
 --- !u!222 &1734435772
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3080,8 +3082,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Beyaz noktalar hem suya hem havaya s\u0131kabilen kuleler i\xE7erir ayr\u0131ca
-    bu noktada kuleleri geli\u015Ftirebilirsin ve mermilerini de\u011Fi\u015Ftirebilirsin."
+  m_Text: The yellow dots representing the cannons who can get upgrade and new ammos
+    also they can hit swimming and flying monsters
 --- !u!222 &1749021398
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3245,7 +3247,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Zamanla Gemiyi onar\u0131r"
+  m_Text: Repairs the Ship Over Time
 --- !u!222 &1771386792
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3414,7 +3416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 746, y: 157}
+  m_AnchoredPosition: {x: 749, y: 157}
   m_SizeDelta: {x: 350, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808206480
@@ -3526,7 +3528,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Sald\u0131r\u0131 h\u0131z\u0131 az\n Hasar\u0131 y\xFCksek"
+  m_Text: 'Attack Speed Low
+
+    Attack Damage Hihg
+
+    35Gold'
 --- !u!222 &1877456718
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3566,86 +3572,6 @@ Transform:
   m_Father: {fileID: 1908631299}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1885301230
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1885301231}
-  - component: {fileID: 1885301233}
-  - component: {fileID: 1885301232}
-  m_Layer: 5
-  m_Name: Text (Legacy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1885301231
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885301230}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4989541074770000711}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1885301232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885301230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 1
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 50
---- !u!222 &1885301233
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885301230}
-  m_CullTransparentMesh: 1
 --- !u!1 &1908631298
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,7 +3945,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "D\xFC\u015F\xFCk Hasar\nY\xFCksek sald\u0131r\u0131 h\u0131z\u0131"
+  m_Text: 'Attack Damage Low
+
+    Attack Speed High
+
+    45Gold'
 --- !u!222 &1939052582
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4125,7 +4055,7 @@ GameObject:
   - component: {fileID: 2060292816}
   - component: {fileID: 2060292815}
   m_Layer: 5
-  m_Name: Image
+  m_Name: olum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4274,7 +4204,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: devam et...
+  m_Text: continue...
 --- !u!222 &2079375767
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4354,8 +4284,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Gemini savunmak i\xE7in renkli noktalara basarak kule sat\u0131n alabilirsin.
-    Her bir renk ayr\u0131 bir kule s\u0131n\u0131f\u0131n\u0131 temsil ediyor."
+  m_Text: 'Press the colorful dots for protect your ship. Every single color representing
+    a tower class with unique talent '
 --- !u!222 &2084650026
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4660,7 +4590,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Seken Mermi
+  m_Text: 'Bouncing Ammo
 
     70'
 --- !u!224 &702832365353980161
@@ -4852,7 +4782,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u015Earapnel\n70"
+  m_Text: 'Shrapnel
+
+    70'
 --- !u!224 &702832367127177827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4960,7 +4892,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Semserleten mermi
+  m_Text: 'Stuning Ammo
 
     70'
 --- !u!114 &1096610917151028685
@@ -5774,7 +5706,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Yakan mermi
+  m_Text: 'Burning Ammo
 
     70'
 --- !u!1 &4821150891953656191
@@ -6044,7 +5976,7 @@ RectTransform:
   m_Children:
   - {fileID: 4989541073795811195}
   m_Father: {fileID: 4989541074770000711}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6473,7 +6405,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 250}
+  m_AnchoredPosition: {x: 0, y: 298}
   m_SizeDelta: {x: 1500, y: 548}
   m_Pivot: {x: 0.5, y: 0.49999997}
 --- !u!1 &4989541073203384892
@@ -6748,7 +6680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 250}
+  m_AnchoredPosition: {x: 0, y: 326}
   m_SizeDelta: {x: 1500, y: 548}
   m_Pivot: {x: 0.5, y: 0.49999997}
 --- !u!1 &4989541073312411790
@@ -7041,7 +6973,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Geli\u015Ftir"
+  m_Text: Upgrade(50)
 --- !u!224 &4989541073795811195
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8914,7 +8846,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1885301231}
   - {fileID: 4989541073014669667}
   m_Father: {fileID: 4989541074549551360}
   m_RootOrder: 2
